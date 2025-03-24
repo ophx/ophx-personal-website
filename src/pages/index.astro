@@ -13,12 +13,12 @@ import Navbar from "../components/Navbar.astro";
 
 			<!-- hero -->
 			<AnimatedScroll client:load>
-				<div class="container px-32 p-4 mx-auto flex w-full">
+				<div class="container px-4 md:px-32 p-4 mx-auto flex w-full">
 					<div class="w-full">
 						<div class="flex items-start justify-between border-2 border-[#c084fc3b] bg-[#a955f71b] rounded-lg shadow-lg p-8">
-							<div class="w-[490px] max-w-[490px]">
-								<p class="text-white text-5xl font-medium">Hello, I'm ophx!</p>
-								<p class="text-gray-300 text-xl">A 17 year old developer from Michigan.</p>
+							<div class="md:w-[490px] md:max-w-[490px]">
+								<p class="text-white text-4xl md:text-5xl font-medium">Hello, I'm ophx!</p>
+								<p class="text-gray-300 md:text-xl">A 17 year old developer from Michigan.</p>
 								<div class="border-b-2 border-[#c084fc3b] w-24 mt-4 mb-4"></div>
 								<p class="text-gray-300">Ever since I was 9 years old, coding has been my passion. It started with messing around jailbreaking PS3's and making MW3 cheats. From there, I fell in love with coding and never looked back. Coding isn't just a hobby for me, it's a part of who I am, driving me to constantly seek out new challenges and opportunities to expand my skills.</p>
 								<div class="flex items-center gap-4 mt-4">
@@ -44,7 +44,7 @@ import Navbar from "../components/Navbar.astro";
 									</a>
 								</div>
 							</div>
-							<div class="w-[490px] max-w-[490px]">
+							<div class="w-[490px] max-w-[490px] hidden md:block">
 								<Discord client:load />
 							</div>
 						</div>
