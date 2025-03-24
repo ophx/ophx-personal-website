@@ -1,0 +1,40 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="title" content="Hello, I'm ophx!">
+		<meta name="description" content="This is my personal website." />
+		<meta property="og:title" content="Hello, I'm ophx!">
+		<meta property="og:description" content="This is my personal website." />
+		<meta property="og:image" content="/logo.jpg" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/jpg" href="/logo.jpg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<style>
+			.background_image {
+				background-image: url(https://wallpapercave.com/wp/wp6298142.jpg);
+				position: fixed;
+				inset: 0;
+				z-index: -1;
+				background-position: center;
+				background-size: cover;
+				pointer-events: none;
+				filter: blur(200px);
+				-webkit-filter: blur(200px);
+			}
+		</style>
+	</head>
+	<body class="bg-[#010101]">
+		<div class="background_image"></div>
+		<slot />
+	</body>
+</html>

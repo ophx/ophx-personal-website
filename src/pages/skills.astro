@@ -1,0 +1,139 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AnimatedScroll from "../components/AnimatedScroll";
+import Navbar from "../components/Navbar.astro";
+---
+
+<style>
+	.scrolling-wrapper {
+        overflow-x: hidden;
+    	width: 100%;
+    }
+	.scrolling-container {
+		animation: scroll 20s linear infinite;
+	}
+	@keyframes scroll {
+		0% {
+			transform: translateX(100%);
+		}
+		100% {
+			transform: translateX(-170%);
+		}
+	}
+</style>
+
+<Layout title="My Skills">
+	<main class="flex h-screen">
+		<div class="m-auto w-full">
+			<!-- navbar -->
+			<Navbar />
+
+			<!-- hero -->
+			<AnimatedScroll client:load>
+				<div class="container px-32 p-4 mx-auto flex w-full">
+					<div class="w-full">
+						<div class="col-span-2 border-2 border-[#c084fc3b] bg-[#a955f71b] p-4 rounded-lg shadow-lg">
+							<p class="text-white text-2xl font-medium text-center">My Skills</p>
+							<p class="text-gray-300 text-center">Here is an overview of my skills and expertise across various domains.</p>
+							<div class="border-b-2 border-[#c084fc3b] mx-auto w-24 mt-4 mb-4"></div>
+							<div class="scrolling-wrapper">
+								<div class="scrolling-container flex items-center gap-4">
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">NextJS</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">ReactJS</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">VueJS</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">AstroJS</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">CSS</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">HTML</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">TailwindCSS</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">NodeJS</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">ExpressJS</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">TypeScript</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">JavaScript</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">MongoDB</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">MySQL</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">Python</span>
+									</div>
+									<div class="transition-all duriation-150 border-2 border-[#c084fc3b] bg-[#a955f71b] px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+										<div class="h-8 w-8">
+											<img draggable="false" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" class="h-8 w-8" />
+										</div>
+										<span class="text-white font-medium">Rust</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</AnimatedScroll>
+		</div>
+	</main>
+</Layout>
