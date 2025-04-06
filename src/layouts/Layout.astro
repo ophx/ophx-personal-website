@@ -4,6 +4,14 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const isMobile = () => {
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        return true;
+    }
+
+    return false;
+}
 ---
 
 <!doctype html>
@@ -19,22 +27,8 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/jpg" href="/logo.jpg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<style>
-			.background_image {
-				background-image: url(https://wallpapercave.com/wp/wp6298142.jpg);
-				position: fixed;
-				inset: 0;
-				z-index: -1;
-				background-position: center;
-				background-size: cover;
-				pointer-events: none;
-				filter: blur(200px);
-				-webkit-filter: blur(200px);
-			}
-		</style>
 	</head>
-	<body class="bg-[#010101]">
-		<div class="background_image"></div>
-		<slot />
+	<body class="bg-[#111]">
+		{isMobile() ? (<p class="text-white text-center text-4xl">mobile isnt supported right now. sorry...</p>) : (<slot />)}
 	</body>
 </html>

@@ -7,7 +7,11 @@ export default function AnimatedScroll({ children }) {
     const mainControls = useAnimation();
 
     useEffect(() => {
-        if (inView) mainControls.start({ opacity: 1, x: 0 });
+        if (inView) {
+            mainControls.start({ opacity: 1, x: 0 });
+        } else {
+            mainControls.start({ opacity: 0, x: 0 });
+        }
     }, [inView]);
 
     return (

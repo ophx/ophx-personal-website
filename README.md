@@ -1,5 +1,5 @@
 # My personal website!
-Uses https://api.lanyard.rest/ for Discord profile information
+Uses https://api.lanyard.rest/ for Discord profile information (spotify status)
 
 # Commands
 | Command                   | Action                                           |
