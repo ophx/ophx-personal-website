@@ -19,3 +19,14 @@
 
     background: rgba(var(--background));
 }
+
+.pastel {
+    --background: 255, 204, 204;
+    --border: 255, 178, 178;
+    --card-background: 255, 178, 178;
+
+    --text-main: 50, 50, 50;
+    --text-muted: 100, 100, 100;
+
+    background: rgba(var(--background));
+}

@@ -4,36 +4,58 @@
     </a>
     <div class="gap-8 flex items-center">
         <a href="/#skills" class="text-text-main duration-200 hover:opacity-65 font-medium">Skills</a>
-        <button id="toggle-theme" class="text-text-main duration-200 hover:opacity-65 font-medium">
-            <svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6 fill-text-main">
-                <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
-            </svg>
-            <svg id="light-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6 fill-text-main">
-                <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
-            </svg>
-        </button>
+        <div class="relative inline-block">
+            <button id="dropdown" class="flex items-center gap-1 text-text-main duration-200 hover:opacity-65 font-medium">
+                <span>Theme</span>
+                <svg id="not-clicked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                    <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                </svg>
+                <svg id="clicked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                    <path fill-rule="evenodd" d="M9.47 6.47a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 1 1-1.06 1.06L10 8.06l-3.72 3.72a.75.75 0 0 1-1.06-1.06l4.25-4.25Z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <div id="dropdown-content" class="absolute z-1 hidden bg-card-background/50 px-4 py-2 rounded-lg shadow-lg border border-border mt-2 w-44">
+                <p id="dark" class="text-text-main duration-200 hover:opacity-65 font-medium cursor-pointer w-full">Dark (Default)</p>
+                <p id="light" class="text-text-main duration-200 hover:opacity-65 font-medium cursor-pointer w-full">Light</p>
+                <p id="pastel" class="text-text-main duration-200 hover:opacity-65 font-medium cursor-pointer w-full">Pastel</p>
+            </div>
+        </div>
     </div>
 </div>
 
 <script is:inline>
-    const toggleButton = document.getElementById("toggle-theme");
-    const lightIcon = document.getElementById("light-icon");
-    const darkIcon = document.getElementById("dark-icon");
+    const dropdownBtn = document.getElementById("dropdown");
+    const dropdownContent = document.getElementById("dropdown-content");
+    const notClickedArrow = document.getElementById("not-clicked");
+    const clickedArrow = document.getElementById("clicked");
 
     const updateIcon = () => {
-        if (document.body.classList.contains("dark")) {
-            lightIcon.style.display = "none";
-            darkIcon.style.display = "block";
-        } else {
-            lightIcon.style.display = "block";
-            darkIcon.style.display = "none";
-        }
+        const isOpen = dropdownContent.classList.contains("block");
+
+        notClickedArrow.style.display = isOpen ? "none" : "block";
+        clickedArrow.style.display = isOpen ? "block" : "none";
     };
     updateIcon();
 
-    toggleButton.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-        document.body.classList.toggle("light");
+    dropdownBtn.addEventListener("click", () => {
+        dropdownContent.classList.toggle("block");
+        dropdownContent.classList.toggle("hidden");
+
         updateIcon();
     });
+
+    const themeButtons = {
+        dark: document.getElementById("dark"),
+        light: document.getElementById("light"),
+        pastel: document.getElementById("pastel")
+    };
+
+    const setTheme = (theme) => {
+        document.body.classList.remove("dark", "light", "pastel");
+        document.body.classList.add(theme);
+    };
+
+    themeButtons.dark.addEventListener("click", () => setTheme("dark"));
+    themeButtons.light.addEventListener("click", () => setTheme("light"));
+    themeButtons.pastel.addEventListener("click", () => setTheme("pastel"));
 </script>
