@@ -1,0 +1,21 @@
+.light {
+    --background: 255, 255, 255;
+    --border: 200, 200, 200;
+    --card-background: 190, 190, 190;
+    
+    --text-main: 0, 0, 0;
+    --text-muted: 50, 50, 50;
+
+    background: rgba(var(--background));
+}
+
+.dark {
+    --background: 17, 17, 17;
+    --border: 34, 34, 34;
+    --card-background: 34, 34, 34;
+
+    --text-main: 255, 255, 255;
+    --text-muted: 209, 213, 219;
+
+    background: rgba(var(--background));
+}

@@ -1,17 +1,12 @@
 ---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
-
-const isMobile = () => {
-    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        return true;
-    }
-
-    return false;
-}
 ---
 
 <!doctype html>
@@ -25,10 +20,18 @@ const isMobile = () => {
 		<meta property="og:image" content="/logo.jpg" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/jpg" href="/logo.jpg" />
+		<link rel="stylesheet" href="/themes.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-[#111]">
-		{isMobile() ? (<p class="text-white text-center text-4xl">mobile isnt supported right now. sorry...</p>) : (<slot />)}
+	<body class="dark">
+		<!-- navbar -->
+		<Navbar />
+
+		<!-- content -->
+		<slot />
+
+		<!-- footer -->
+		<Footer />
 	</body>
 </html>
