@@ -5,8 +5,8 @@ export default {
 		extend: {
 			colors: {
 				background: "rgba(var(--background))",
-				border: "rgba(var(--border))",
 				"card-background": "rgba(var(--card-background))",
+				border: "rgba(var(--border))",
 				"text-main": "rgba(var(--text-main))",
 				"text-muted": "rgba(var(--text-muted))",
 			},

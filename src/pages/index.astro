@@ -7,10 +7,9 @@ import Discord from "../components/Discord";
 <Layout title="Hello, I'm ophx!">
 	<!-- hero -->
 	<AnimatedScroll client:load>
-		<div class="w-full px-16 pb-40 pt-72">
-			<div class="flex space-between justify-center gap-24">
+		<div class="w-full px-16 pb-40 pt-96">
+			<div class="flex space-between justify-center gap-48">
 				<div class="space-y-4">
-					<span class="rounded-full bg-blue-700 bg-opacity-50 border border-blue-700 text-text-main px-4 py-0.5 text-sm font-medium">I love psychedelics</span>
 					<p class="text-text-main text-5xl font-medium">Hello! I'm ophx! 👋</p>
 					<p class="text-text-muted text-xl">I'm an 18 year old <i>"developer"</i> from Flint, Michigan.</p>
 					<div class="flex items-center gap-4">
@@ -19,7 +18,7 @@ import Discord from "../components/Discord";
 								<path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765c1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6l5.207 3.005l-5.212 2.995z"></path>
 							</svg>
 						</a>
-						<a href="https://github.com/ophx" target="_blank" class="text-white px-8 py-2 rounded-lg shadow-lg bg-card-background/50 border border-border duration-200 hover:opacity-65 font-medium">
+						<a href="https://github.com/ophx" target="_blank" class="text-white px-8 py-2 rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border duration-200 hover:opacity-65 font-medium">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="h-6 w-6 fill-white">
 								<path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
 							</svg>
@@ -32,12 +31,7 @@ import Discord from "../components/Discord";
 					</div>
 				</div>
 				<div>
-					<div class="relative">
-						<img src="/scary.png" alt="scary D:" class="h-[14rem] w-[14rem] rounded-full shadow-lg border border-border" draggable="false" />
-						<div class="absolute -top-8 -right-14 px-4 py-2 rounded-lg shadow-lg bg-card-background/50 border border-border">
-							<span class="text-text-main">meep...</span>
-						</div>
-					</div>
+					<img src="/scary.png" alt="scary D:" class="h-[14rem] w-[14rem] rounded-full shadow-lg border border-border" draggable="false" />
 				</div>
 			</div>
 			<div class="flex justify-center animate-bounce pt-8">
@@ -56,28 +50,28 @@ import Discord from "../components/Discord";
 				<p class="text-text-muted text-xl">Stuff i've been working on over the years.</p>
 				<div class="mt-4 mb-4 border-b border-border"></div>
 				<div class="grid grid-cols-2 w-[800px] gap-4">
-					<div class="relative rounded-lg shadow-lg bg-card-background/50 border border-border px-8 py-4 w-96">
+					<div class="relative rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border px-8 py-4 w-96">
 						<div class="absolute inset-0 opacity-35 bg-[url(/react.png)] bg-no-repeat bg-right-top bg-contain blur"></div>
 						<div class="relative z-10 space-y-4">
 							<p class="text-left text-3xl font-medium text-text-main">Web Development</p>
 							<p class="text-left text-text-muted">I have been messing with web development ever since I was 9 years old. I first started with just HTML and CSS but then moved onto frameworks like React, Svelte, ect.</p>
 						</div>
 					</div>
-					<div class="relative rounded-lg shadow-lg bg-card-background/50 border border-border px-8 py-4 w-96">
+					<div class="relative rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border px-8 py-4 w-96">
 						<div class="absolute inset-0 opacity-35 bg-[url(/discord.png)] bg-no-repeat bg-right-top bg-contain blur"></div>
 						<div class="relative z-10 space-y-4">
 							<p class="text-left text-3xl font-medium text-text-main">Bot Development</p>
 							<p class="text-left text-text-muted">I make Discord/Telegram bots occasionally. It's fun tbh I like it lol. I've been working on a Fortnite skin checker bot for Discord last few weeks tho.</p>
 						</div>
 					</div>
-					<div class="relative rounded-lg shadow-lg bg-card-background/50 border border-border px-8 py-4 w-96">
+					<div class="relative rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border px-8 py-4 w-96">
 						<div class="absolute inset-0 opacity-35 bg-[url(/cpp.png)] bg-no-repeat bg-right-top bg-contain blur"></div>
 						<div class="relative z-10 space-y-4">
 							<p class="text-left text-text-main text-3xl font-medium">Cheat Development</p>
 							<p class="text-left text-text-muted">I used to mess around with making cheats for online games. But, a few months ago I completely quit. It's a real pain in the ass lmao.</p>
 						</div>
 					</div>
-					<div class="relative rounded-lg shadow-lg bg-card-background/50 border border-border px-8 py-4 w-96">
+					<div class="relative rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border px-8 py-4 w-96">
 						<div class="absolute inset-0 opacity-35 bg-[url(/shroom.png)] bg-no-repeat bg-right-top bg-contain blur"></div>
 						<div class="relative z-10 space-y-4">
 							<p class="text-left text-text-main text-3xl font-medium">Growing Shrooms</p>

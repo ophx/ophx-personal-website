@@ -1,4 +1,4 @@
-<div class="relative left-0 right-0 top-8 m-auto flex items-center justify-between rounded-lg shadow-lg bg-card-background/50 border border-border px-8 backdrop-blur-lg w-[1000px] py-2">
+<div class="fixed left-0 right-0 top-4 m-auto flex items-center justify-between rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border px-8 w-[1200px] py-2">
     <a href="/" class="flex items-center gap-2">
         <img src="https://cdn3.emoji.gg/emojis/9879_hackerman.gif" alt="logo" width="50" height="50" draggable="false" />
     </a>
@@ -7,17 +7,13 @@
         <div class="relative inline-block">
             <button id="dropdown" class="flex items-center gap-1 text-text-main duration-200 hover:opacity-65 font-medium">
                 <span>Theme</span>
-                <svg id="not-clicked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 transition-transform duration-200 ease-in-out">
                     <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
                 </svg>
-                <svg id="clicked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-                    <path fill-rule="evenodd" d="M9.47 6.47a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 1 1-1.06 1.06L10 8.06l-3.72 3.72a.75.75 0 0 1-1.06-1.06l4.25-4.25Z" clip-rule="evenodd" />
-                </svg>
             </button>
-            <div id="dropdown-content" class="absolute z-1 hidden bg-card-background/50 px-4 py-2 rounded-lg shadow-lg border border-border mt-2 w-44">
-                <p id="dark" class="text-text-main duration-200 hover:opacity-65 font-medium cursor-pointer w-full">Dark (Default)</p>
-                <p id="light" class="text-text-main duration-200 hover:opacity-65 font-medium cursor-pointer w-full">Light</p>
-                <p id="pastel" class="text-text-main duration-200 hover:opacity-65 font-medium cursor-pointer w-full">Pastel</p>
+            <div id="dropdown-content" class="absolute z-1 opacity-0 -translate-y-2 pointer-events-none transition-all duration-200 ease-out bg-card-background/50 backdrop-blur-lg px-4 py-2 rounded-lg shadow-lg border border-border mt-2 w-44">
+                <button id="dark" class="text-text-main duration-200 hover:opacity-65 font-medium cursor-pointer">Dark (Default)</button>
+                <button id="light" class="text-text-main duration-200 hover:opacity-65 font-medium cursor-pointer">Light</button>
             </div>
         </div>
     </div>
@@ -26,20 +22,24 @@
 <script is:inline>
     const dropdownBtn = document.getElementById("dropdown");
     const dropdownContent = document.getElementById("dropdown-content");
-    const notClickedArrow = document.getElementById("not-clicked");
-    const clickedArrow = document.getElementById("clicked");
+    const arrow = document.getElementById("arrow");
 
     const updateIcon = () => {
-        const isOpen = dropdownContent.classList.contains("block");
+        const isOpen = dropdownContent.classList.contains("opacity-100");
 
-        notClickedArrow.style.display = isOpen ? "none" : "block";
-        clickedArrow.style.display = isOpen ? "block" : "none";
+        arrow.classList.toggle("rotate-180", isOpen);
     };
     updateIcon();
 
     dropdownBtn.addEventListener("click", () => {
-        dropdownContent.classList.toggle("block");
-        dropdownContent.classList.toggle("hidden");
+        const isVisible = dropdownContent.classList.contains("opacity-100");
+
+        dropdownContent.classList.toggle("opacity-0", isVisible);
+        dropdownContent.classList.toggle("opacity-100", !isVisible);
+        dropdownContent.classList.toggle("-translate-y-2", isVisible);
+        dropdownContent.classList.toggle("translate-y-0", !isVisible);
+        dropdownContent.classList.toggle("pointer-events-none", isVisible);
+        dropdownContent.classList.toggle("pointer-events-auto", !isVisible);
 
         updateIcon();
     });
@@ -47,15 +47,13 @@
     const themeButtons = {
         dark: document.getElementById("dark"),
         light: document.getElementById("light"),
-        pastel: document.getElementById("pastel")
     };
 
     const setTheme = (theme) => {
-        document.body.classList.remove("dark", "light", "pastel");
+        document.body.classList.remove("dark", "light");
         document.body.classList.add(theme);
     };
 
     themeButtons.dark.addEventListener("click", () => setTheme("dark"));
     themeButtons.light.addEventListener("click", () => setTheme("light"));
-    themeButtons.pastel.addEventListener("click", () => setTheme("pastel"));
 </script>
