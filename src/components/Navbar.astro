@@ -1,19 +1,20 @@
-<div class="fixed left-0 right-0 top-4 m-auto flex items-center justify-between rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border px-8 w-[1200px] py-2">
+<div class="fixed left-0 right-0 top-4 z-10 m-auto flex items-center justify-between rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border px-8 py-2 w-[1200px]">
     <a href="/" class="flex items-center gap-2">
-        <img src="https://cdn3.emoji.gg/emojis/9879_hackerman.gif" alt="logo" width="50" height="50" draggable="false" />
+        <img src="https://cdn3.emoji.gg/emojis/89581-pepejob.png" alt="logo" width="50" height="50" draggable="false" />
     </a>
     <div class="gap-8 flex items-center">
-        <a href="/#skills" class="text-text-main duration-200 hover:opacity-65 font-medium">Skills</a>
+        <a href="/#projects" class="text-text-main duration-200 hover:text-text-muted">Projects</a>
+        <a href="/#skills" class="text-text-main duration-200 hover:text-text-muted">Skills</a>
         <div class="relative inline-block">
-            <button id="dropdown" class="flex items-center gap-1 text-text-main duration-200 hover:opacity-65 font-medium">
+            <button id="dropdown" class="flex items-center gap-1 text-text-main duration-200 hover:text-text-muted">
                 <span>Theme</span>
                 <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 transition-transform duration-200 ease-in-out">
                     <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
                 </svg>
             </button>
-            <div id="dropdown-content" class="absolute z-1 opacity-0 -translate-y-2 pointer-events-none transition-all duration-200 ease-out bg-card-background/50 backdrop-blur-lg px-4 py-2 rounded-lg shadow-lg border border-border mt-2 w-44">
-                <button id="dark" class="text-text-main duration-200 hover:opacity-65 font-medium cursor-pointer">Dark (Default)</button>
-                <button id="light" class="text-text-main duration-200 hover:opacity-65 font-medium cursor-pointer">Light</button>
+            <div id="dropdown-content" class="absolute z-1 opacity-0 -translate-y-2 pointer-events-none transition-all duration-200 ease-out bg-card-background/50 backdrop-blur-lg px-2 py-2 rounded-lg shadow-lg border border-border mt-2 w-44 space-y-2">
+                <button id="dark" class="text-text-main duration-200 hover:text-text-muted hover:bg-card-background hover:backdrop-blur-lg px-4 py-1 rounded-lg hover:shadow-lg w-full text-left">Dark (Default)</button>
+                <button id="light" class="text-text-main duration-200 hover:text-text-muted hover:bg-card-background hover:backdrop-blur-lg px-4 py-1 rounded-lg hover:shadow-lg w-full text-left">Light</button>
             </div>
         </div>
     </div>

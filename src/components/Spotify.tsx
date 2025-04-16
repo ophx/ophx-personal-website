@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLanyard } from "react-use-lanyard";
 
-export default function Discord() {
+export default function Spotify() {
     const [ tick, setTick ] = useState(0);
     const { loading, status } = useLanyard({
         userId: "459738097622712320",
