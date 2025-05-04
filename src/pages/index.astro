@@ -6,9 +6,9 @@ import Spotify from "../components/Spotify";
 
 <Layout title="Hello, I'm ophx!">
 	<!-- hero -->
-	<AnimatedScroll client:load>
-		<div class="w-full px-16 pb-40 pt-96">
-			<div class="flex space-between justify-center gap-48">
+	<div class="w-full px-16 pb-40 pt-96">
+		<div class="flex space-between justify-center gap-48">
+			<AnimatedScroll initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeOut" }} client:load>
 				<div class="space-y-4">
 					<p class="text-text-main text-6xl font-medium">Hello! I'm ophx! <span class="animate-wave transform inline-block">👋</span></p>
 					<p class="text-text-muted text-xl">I'm an 18 year old <i id="typing"></i> from Flint, Michigan.</p>
@@ -30,32 +30,38 @@ import Spotify from "../components/Spotify";
 						</a>
 					</div>
 				</div>
+			</AnimatedScroll>
+			<AnimatedScroll initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeOut" }} client:load>
 				<div>
 					<img src="/scary.png" alt="scary D:" class="h-[14rem] w-[14rem] rounded-full shadow-lg border border-border" draggable="false" />
 				</div>
-			</div>
-			<div class="flex justify-center animate-bounce pt-8">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-8 fill-text-main">
-					<path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-				</svg>                  
-			</div>
+			</AnimatedScroll>
 		</div>
-	</AnimatedScroll>
+		<AnimatedScroll initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} client:load>
+			<div class="flex justify-center pt-8">
+				<div class="relative h-[2.2rem] w-[20px] border-2 border-text-muted rounded-3xl">
+					<div class="absolute bg-text-muted rounded-[1rem] h-2 w-[3px] left-[calc(50%-1.5px)] right-1/2 top-2 animate-scroll"></div>
+				</div>
+			</div>
+		</AnimatedScroll>
+	</div>
 
 	<!-- projects -->
-	<AnimatedScroll client:load>
+	<AnimatedScroll initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeOut" }} client:load>
 		<div id="projects" class="w-full gap-4 px-16 pb-40 pt-40 text-center flex justify-center">
 			<div class="space-y-4">
-				<p class="text-text-main text-5xl font-medium">My Projects</p>
-				<p class="text-text-muted text-xl">Stuff i've been working on over the years.</p>
-				<div class="mt-4 mb-4 border-b border-border"></div>
+				<div>
+					<p class="text-text-main text-2xl font-medium">My Projects</p>
+					<p class="text-text-muted">Stuff i've been working on over the years.</p>
+				</div>
+				<div class="border-b border-border"></div>
 				<div class="grid grid-cols-2 gap-4">
 					<div class="rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border w-96 duration-200 hover:-translate-y-1">
 						<div>
 							<img src="/personal-website.png" alt="personal website" draggable="false" class="rounded-t-lg shadow-lg h-[185px] w-[385px]" />
 						</div>
 						<div class="space-y-2 px-8 py-4">
-							<p class="text-left text-3xl font-medium text-text-main">Personal Website</p>
+							<p class="text-left text-xl font-medium text-text-main">Personal Website</p>
 							<p class="text-left text-text-muted">I made this to show off my skills on here and also because I was bored.</p>
 							<div class="flex items-center gap-4">
 								<span class="rounded-full bg-card-background/50 border border-border text-text-main px-4 py-0.5 text-sm">Astro</span>
@@ -69,7 +75,7 @@ import Spotify from "../components/Spotify";
 							<img src="/sparkle.png" alt="sparkle " draggable="false" class="rounded-t-lg shadow-lg h-[185px] w-[385px]" />
 						</div>
 						<div class="space-y-2 px-8 py-4">
-							<p class="text-left text-3xl font-medium text-text-main">Sparkle</p>
+							<p class="text-left text-xl font-medium text-text-main">Sparkle</p>
 							<p class="text-left text-text-muted">A Fortnite skin checker that I made a while ago.</p>
 							<div class="flex items-center gap-4">
 								<span class="rounded-full bg-card-background/50 border border-border text-text-main px-4 py-0.5 text-sm">JavaScript</span>
@@ -83,39 +89,27 @@ import Spotify from "../components/Spotify";
 	</AnimatedScroll>
 
 	<!-- skills -->
-	<AnimatedScroll client:load>
+	<AnimatedScroll initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeOut" }} client:load>
 		<div id="skills" class="w-full gap-4 px-16 pb-40 pt-10 text-center flex justify-center">
 			<div class="space-y-4">
-				<p class="text-text-main text-5xl font-medium">What are my skills?</p>
-				<p class="text-text-muted text-xl">I've got no idea</p>
-				<div class="mt-4 mb-4 border-b border-border"></div>
+				<div>
+					<p class="text-text-main text-2xl font-medium">What are my skills?</p>
+					<p class="text-text-muted">I've got no idea</p>
+				</div>
+				<div class="border-b border-border"></div>
 				<div class="grid grid-cols-2 gap-4">
 					<div class="relative rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border px-8 py-4 w-96 duration-200 hover:-translate-y-1">
 						<div class="absolute inset-0 opacity-35 bg-[url(/react.png)] bg-no-repeat bg-right-top bg-contain blur"></div>
 						<div class="relative z-10 space-y-2">
-							<p class="text-left text-3xl font-medium text-text-main">Web Development</p>
+							<p class="text-left text-xl font-medium text-text-main">Web Development</p>
 							<p class="text-left text-text-muted">I have been messing with web development ever since I was 9 years old. I first started with just HTML and CSS but then moved onto frameworks like React, Svelte, ect.</p>
 						</div>
 					</div>
 					<div class="relative rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border px-8 py-4 w-96 duration-200 hover:-translate-y-1">
 						<div class="absolute inset-0 opacity-35 bg-[url(/discord.png)] bg-no-repeat bg-right-top bg-contain blur"></div>
 						<div class="relative z-10 space-y-2">
-							<p class="text-left text-3xl font-medium text-text-main">Bot Development</p>
+							<p class="text-left text-xl font-medium text-text-main">Bot Development</p>
 							<p class="text-left text-text-muted">I make Discord/Telegram bots occasionally. It's fun tbh I like it lol. I've been working on a Fortnite skin checker bot for Discord last few weeks tho.</p>
-						</div>
-					</div>
-					<div class="relative rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border px-8 py-4 w-96 duration-200 hover:-translate-y-1">
-						<div class="absolute inset-0 opacity-35 bg-[url(/cpp.png)] bg-no-repeat bg-right-top bg-contain blur"></div>
-						<div class="relative z-10 space-y-2">
-							<p class="text-left text-text-main text-3xl font-medium">Cheat Development</p>
-							<p class="text-left text-text-muted">I used to mess around with making cheats for online games. But, a few months ago I completely quit. It's a real pain in the ass lmao.</p>
-						</div>
-					</div>
-					<div class="relative rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border px-8 py-4 w-96 duration-200 hover:-translate-y-1">
-						<div class="absolute inset-0 opacity-35 bg-[url(/shroom.png)] bg-no-repeat bg-right-top bg-contain blur"></div>
-						<div class="relative z-10 space-y-2">
-							<p class="text-left text-text-main text-3xl font-medium">Growing Shrooms</p>
-							<p class="text-left text-text-muted">Since December of 2023, I have been growing shrooms non stop (yes, the magic ones). I love it, it's fun for me. I grow B+, Blue Meanie, Penis Envy, and ALOT more.</p>
 						</div>
 					</div>
 				</div>

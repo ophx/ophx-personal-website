@@ -20,10 +20,17 @@ export default {
                     "60%": { transform: "rotate(10.0deg)" },
                     "70%": { transform: "rotate(0.0deg)" },
                     "100%": { transform: "rotate(0.0deg)" },
-                }
+                },
+                scroll: {
+                    "0%": { transform: "translateY(0)" },
+                    "50%": { transform: "translateY(0.5rem)" },
+                    "51%": { opacity: "1" },
+                    "100%": { opacity: "0", transform: "translateY(0)" },
+                },
             },
             animation: {
-                wave: "wave 1.5s infinite"
+                wave: "wave 1.5s infinite",
+                scroll: "scroll 2.5s ease infinite"
             }
 		},
 	},
