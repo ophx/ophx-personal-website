@@ -7,3 +7,17 @@
         <a href="/skills" class="text-text-main duration-200 hover:bg-white/10 rounded-lg px-4 py-2">Skills</a>
     </div>
 </div>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll("a[href]");
+        const currentPath = window.location.pathname;
+  
+        links.forEach(link => {
+            const href = link.getAttribute("href");
+            if (href !== "/" && href === currentPath) {
+                link.classList.add("bg-white/10");
+            }
+        });
+    });
+</script>

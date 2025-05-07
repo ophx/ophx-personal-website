@@ -100,7 +100,7 @@ export default function AnimatedColors({
 
   return (
     <div ref={ref}>
-      <motion.section style={{ backgroundImage }} className="relative grid min-h-screen place-content-center overflow-hidden">
+      <motion.div style={{ backgroundImage }} className="relative grid min-h-screen place-content-center overflow-hidden">
         <div className="absolute inset-0">
           <Particles id="tsparticles" options={options} />
         </div>
@@ -108,7 +108,7 @@ export default function AnimatedColors({
         <div className="z-10">
           {children}
         </div>
-      </motion.section>
+      </motion.div>
     </div>
   );
 }
