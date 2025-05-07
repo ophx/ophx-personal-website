@@ -15,7 +15,7 @@ export default function Animated({
         initial={initial}
         whileInView={whileInView}
         transition={transition}
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.5 }}
       >
         {children}
       </motion.div>
