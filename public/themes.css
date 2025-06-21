@@ -1,3 +1,8 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
 body {
     --background: 30, 33, 36;
     --card-background: 54, 57, 62;

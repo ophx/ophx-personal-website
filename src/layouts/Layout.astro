@@ -23,6 +23,9 @@ const { title } = Astro.props;
 		<link rel="stylesheet" href="/themes.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
 	<body class="dark">
 		<div id="mobile-warning" class="hidden fixed inset-0 bg-background text-text-main flex items-center justify-center text-center px-6 z-50">
