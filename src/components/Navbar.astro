@@ -1,8 +1,12 @@
-<div class="flex items-center justify-between w-full">
-    <a href="/" class="text-text-muted hover:text-text-main duration-200 px-4 border-b-2 border-transparent hover:border-blue-500">Home</a>
-    <a href="/projects" class="text-text-muted hover:text-text-main duration-200 px-4 border-b-2 border-transparent hover:border-blue-500">Projects</a>
-    <a href="/skills" class="text-text-muted hover:text-text-main duration-200 px-4 border-b-2 border-transparent hover:border-blue-500">Skills</a>
-    <a href="/contact" class="text-text-muted hover:text-text-main duration-200 px-4 border-b-2 border-transparent hover:border-blue-500">Contact</a>
+<div class="fixed left-0 right-0 top-4 z-10 m-auto flex items-center justify-between w-[1200px]">
+    <p class="flex items-center gap-2">
+        <img src="/logo.png" alt="logo" width="50" height="50" draggable="false" class="rounded-full shadow-lg" />
+    </p>
+    <div class="gap-2 flex items-center">
+        <a href="/" class="text-text-muted hover:text-text-main duration-200 px-4 border-b-2 border-transparent hover:border-white/50">Home</a>
+        <a href="/projects" class="text-text-muted hover:text-text-main duration-200 px-4 border-b-2 border-transparent hover:border-white/50">Projects</a>
+        <a href="/skills" class="text-text-muted hover:text-text-main duration-200 px-4 border-b-2 border-transparent hover:border-white/50">Skills</a>
+    </div>
 </div>
 
 <script is:inline>
@@ -13,9 +17,8 @@
         links.forEach(link => {
             const href = link.getAttribute("href");
             if (href === currentPath) {
-                link.classList.add("text-blue-500", "border-blue-500");
+                link.classList.add("text-text-main", "border-white/50");
                 link.classList.remove("text-text-muted");
-                link.classList.remove("hover:text-text-main");
             }
         });
     });

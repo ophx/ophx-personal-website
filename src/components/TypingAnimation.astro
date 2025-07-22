@@ -1,0 +1,40 @@
+<i id="typing" class="typing"></i>
+
+<script is:inline>
+	const roles = ["developer", "psychedelic user", "dirt bike rider"];
+	const typing = document.getElementById("typing");
+
+	let roleIndex = 0;
+	let charIndex = 0;
+	let isDeleting = false;
+
+	function type() {
+		const currentRole = roles[roleIndex];
+
+        if (isDeleting) {
+			charIndex--;
+		} else {
+			charIndex++;
+		}
+
+		typing.textContent = currentRole.substring(0, charIndex);
+
+		if (!isDeleting && charIndex === currentRole.length) {
+            return setTimeout(() => {
+                isDeleting = true;
+                type();
+            }, 1500);
+        }
+
+		if (isDeleting && charIndex === 0) {
+			isDeleting = false;
+			roleIndex = (roleIndex + 1) % roles.length;
+            
+			return setTimeout(type, 500);
+		}
+
+		setTimeout(type, isDeleting ? 50 : 100);
+	};
+
+	setTimeout(type, 500);
+</script>

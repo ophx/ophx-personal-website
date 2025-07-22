@@ -25,9 +25,9 @@ const { title } = Astro.props;
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
-	<body class="dark select-none">
+	<body class="dark">
 		<div id="mobile-warning" class="hidden fixed inset-0 bg-background text-text-main flex items-center justify-center text-center px-6 z-50">
 			<div>
 				<p class="text-text-main text-2xl font-medium">Mobile is not supported yet 🚧</p>
@@ -36,27 +36,9 @@ const { title } = Astro.props;
 		</div>
 
 		<div id="site-content">
-			<div class="flex h-screen">
-				<div class="m-auto justify-center">
-					<div class="flex flex-col">
-						<div class="bg-card-background backdrop-blur-lg border border-border rounded-t-lg px-4 py-2">
-							<p class="text-text-main text-center">nigga.top</p>
-						</div>
-						<div class="bg-card-background/50 backdrop-blur-lg border border-border px-4 py-2 w-[400px] h-[300px]">
-							<div class="mb-4">
-								<Navbar />
-							</div>
+			<Navbar />
 
-							<div>
-								<slot />
-							</div>
-						</div>
-						<div class="bg-card-background backdrop-blur-lg border border-border rounded-b-lg px-4 py-2">
-							<p class="text-text-main text-center text-sm text-text-muted">Hosted on Niggerflare</p>
-						</div>
-					</div>
-				</div>
-			</div>
+			<slot />
 
 			<Spotify client:load />
 		</div>

@@ -1,14 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import AnimatedScroll from "../components/AnimatedScroll";
+import AnimatedColors from "../components/AnimatedColors";
 ---
 
 <Layout title="Skills">
-	<p class="text-text-main"> - C++</p>
-    <p class="text-text-main"> - Rust</p>
-    <p class="text-text-main"> - Python</p>
-    <p class="text-text-main"> - Ruby</p>
-    <p class="text-text-main"> - Kotlin</p>
-    <p class="text-text-main"> - JavaScript/TypeScript</p>
-    <p class="text-text-main"> - HTML</p>
-    <p class="text-text-main"> - CSS</p>
+	<AnimatedColors client:load>
+		<div class="flex justify-center">
+			<AnimatedScroll initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeOut" }} client:load>
+				<div class="space-y-4">
+					<div>
+                        <p class="text-text-main text-3xl font-medium">What are my skills?</p>
+					    <p class="text-text-muted text-xl">Take a look</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="relative rounded-lg shadow-lg overflow-hidden bg-card-background/50 backdrop-blur-lg border border-border px-8 py-4 w-96 duration-200 hover:-translate-y-1">
+                            <div class="absolute inset-0 opacity-35 bg-[url(/react.png)] bg-no-repeat bg-right-top bg-contain blur"></div>
+                            <div class="relative z-10 space-y-2">
+                                <p class="text-left text-xl font-medium text-text-main">Web Development</p>
+                                <p class="text-left text-text-muted">I have been messing with web development ever since I was 9 years old. I first started with just HTML and CSS but then moved onto frameworks like React, Svelte, ect.</p>
+                            </div>
+                        </div>
+                        <div class="relative rounded-lg shadow-lg overflow-hidden bg-card-background/50 backdrop-blur-lg border border-border px-8 py-4 w-96 duration-200 hover:-translate-y-1">
+                            <div class="absolute inset-0 opacity-35 bg-[url(/discord.png)] bg-no-repeat bg-right-top bg-contain blur"></div>
+                            <div class="relative z-10 space-y-2">
+                                <p class="text-left text-xl font-medium text-text-main">Bot Development</p>
+                                <p class="text-left text-text-muted">I make Discord bots occasionally. It's fun tbh I like it lol. I've been working on a Fortnite skin checker bot for Discord last few weeks tho.</p>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</AnimatedScroll>
+		</div>
+	</AnimatedColors>
 </Layout>
