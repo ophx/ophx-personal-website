@@ -1,49 +1,97 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import AnimatedScroll from "../components/AnimatedScroll";
-import AnimatedColors from "../components/AnimatedColors";
 ---
 
 <Layout title="Projects">
-	<AnimatedColors client:load>
-		<div class="flex justify-center">
-			<AnimatedScroll initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeOut" }} client:load>
-				<div class="space-y-4">
-					<div>
-                        <p class="text-text-main text-3xl font-medium">My projects</p>
-					    <p class="text-text-muted text-xl">Stuff I've been working on</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border w-96 duration-200 hover:-translate-y-1">
-                            <div>
-                                <img src="/personal-website.png" alt="personal website" draggable="false" class="rounded-t-lg shadow-lg h-[185px] w-[385px]" />
-                            </div>
-                            <div class="space-y-2 px-8 py-4">
-                                <p class="text-left text-xl font-medium text-text-main">Personal Website</p>
-                                <p class="text-left text-text-muted">I made this to show off my skills on here and also because I was bored.</p>
-                                <div class="flex items-center gap-4">
-                                    <span class="rounded-full bg-card-background/50 border border-border text-text-main px-4 py-0.5 text-sm">Astro</span>
-                                    <span class="rounded-full bg-card-background/50 border border-border text-text-main px-4 py-0.5 text-sm">React</span>
-                                    <span class="rounded-full bg-card-background/50 border border-border text-text-main px-4 py-0.5 text-sm">Tailwind CSS</span>
-                                </div>
+    <div class="flex justify-center">
+        <AnimatedScroll
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            client:load
+        >
+            <div class="space-y-4">
+                <div>
+                    <p class="text-text-main text-3xl font-medium">
+                        My projects
+                    </p>
+                    <p class="text-text-muted text-xl">
+                        Stuff I've been working on...
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div
+                        class="group rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border duration-200 hover:border-[#9B30FF] hover:bg-[#9B30FF]/10 w-96 hover:-translate-y-1"
+                    >
+                        <div>
+                            <img
+                                src="/personal-website.png"
+                                alt="personal website"
+                                draggable="false"
+                                class="rounded-t-lg shadow-lg h-[185px] w-[385px]"
+                            />
+                        </div>
+                        <div class="space-y-2 px-5 py-4">
+                            <p
+                                class="text-left text-xl font-medium text-text-main"
+                            >
+                                Personal Website <span class="text-green-500 text-sm">(Active)</span>
+                            </p>
+                            <p class="text-left text-text-muted">
+                                I made this to show off my skills on here and
+                                also because I was bored.
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <span
+                                    class="rounded-full bg-card-background/50 border border-border backdrop-blur-lg duration-200 group-hover:border-[#9B30FF] group-hover:bg-[#9B30FF]/10 text-text-main px-4 py-0.5 text-sm"
+                                    >Astro</span
+                                >
+                                <span
+                                    class="rounded-full bg-card-background/50 border border-border backdrop-blur-lg duration-200 group-hover:border-[#9B30FF] group-hover:bg-[#9B30FF]/10 text-text-main px-4 py-0.5 text-sm"
+                                    >React</span
+                                >
+                                <span
+                                    class="rounded-full bg-card-background/50 border border-border backdrop-blur-lg duration-200 group-hover:border-[#9B30FF] group-hover:bg-[#9B30FF]/10 text-text-main px-4 py-0.5 text-sm"
+                                    >Tailwind CSS</span
+                                >
                             </div>
                         </div>
-                        <div class="rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border w-96 duration-200 hover:-translate-y-1">
-                            <div>
-                                <img src="/sparkle.png" alt="sparkle " draggable="false" class="rounded-t-lg shadow-lg h-[185px] w-[385px]" />
-                            </div>
-                            <div class="space-y-2 px-8 py-4">
-                                <p class="text-left text-xl font-medium text-text-main">Sparkle</p>
-                                <p class="text-left text-text-muted">A Fortnite skin checker that I made a while ago.</p>
-                                <div class="flex items-center gap-4">
-                                    <span class="rounded-full bg-card-background/50 border border-border text-text-main px-4 py-0.5 text-sm">JavaScript</span>
-                                    <span class="rounded-full bg-card-background/50 border border-border text-text-main px-4 py-0.5 text-sm">DiscordJS</span>
-                                </div>
+                    </div>
+                    <div
+                        class="group rounded-lg shadow-lg bg-card-background/50 backdrop-blur-lg border border-border duration-200 hover:border-[#9B30FF] hover:bg-[#9B30FF]/10 w-96 hover:-translate-y-1"
+                    >
+                        <div>
+                            <img
+                                src="/sparkle.png"
+                                alt="sparkle "
+                                draggable="false"
+                                class="rounded-t-lg shadow-lg h-[185px] w-[385px]"
+                            />
+                        </div>
+                        <div class="space-y-2 px-5 py-4">
+                            <p
+                                class="text-left text-xl font-medium text-text-main"
+                            >
+                                Sparkle <span class="text-red-500 text-sm">(Inactive)</span>
+                            </p>
+                            <p class="text-left text-text-muted">
+                                A Fortnite skin checker that I made a while ago.
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <span
+                                    class="rounded-full bg-card-background/50 border border-border backdrop-blur-lg duration-200 group-hover:border-[#9B30FF] group-hover:bg-[#9B30FF]/10 text-text-main px-4 py-0.5 text-sm"
+                                    >JavaScript</span
+                                >
+                                <span
+                                    class="rounded-full bg-card-background/50 border border-border backdrop-blur-lg duration-200 group-hover:border-[#9B30FF] group-hover:bg-[#9B30FF]/10 text-text-main px-4 py-0.5 text-sm"
+                                    >DiscordJS</span
+                                >
                             </div>
                         </div>
                     </div>
-				</div>
-			</AnimatedScroll>
-		</div>
-	</AnimatedColors>
+                </div>
+            </div>
+        </AnimatedScroll>
+    </div>
 </Layout>
