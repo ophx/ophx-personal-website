@@ -1,7 +1,5 @@
 # My personal website!
-Uses https://api.lanyard.rest/ for Discord profile information (spotify status)
-<br>
-Build with astro and tailwindcss
+Built with astro and tailwindcss
 <br>
 https://ophxthemushroom.pages.dev/
 
